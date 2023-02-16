@@ -1,0 +1,42 @@
+﻿@page
+@using Pub_Sub_Example_Implementation.Arguments;
+@model Pub_Sub_Example_Implementation.Pages.AngularDisplayModel
+@{
+}
+<section class="containder shadowed-container">
+    <h1 class="text-center">Candidates that Sucseeded at Front End Questions</h1>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>                Full Name            </th>
+            <th>                Linkedin           </th>
+            <th>                Score            </th>
+            <th>                Q1 Answer            </th>
+            <th>                Q2 Answer            </th>
+            <th>                Q3 Answer            </th>
+            <th>                Q4 Answer            </th>
+        </tr>
+        @foreach (FrontEndAnswers item in Model.Candidates)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Linkedin</td>
+                <td>@item.Score</td>
+                <td>
+                    Q1 - @item.Answers[0].Item1
+                </td>
+                <td>
+                    Q2 - @item.Answers[1].Item1
+
+                </td>
+                <td>
+                    Q3 - @item.Answers[2].Item1
+
+                </td>
+                <td>
+                    Q4 - @item.Answers[3].Item1
+                </td>
+            </tr>
+        }
+    </table>
+</section>

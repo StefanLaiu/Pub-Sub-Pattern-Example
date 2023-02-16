@@ -1,0 +1,29 @@
+﻿@page
+@using Pub_Sub_Example_Implementation.Arguments;
+@model Pub_Sub_Example_Implementation.Pages.HumanResourcesDisplayModel
+@{
+}
+
+<section class="container shadowed-container">
+    <h1 class="text-center">Candidates that applied</h1>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>                Full Name            </th>
+            <th>                Email            </th>
+            <th>                Linkedin           </th>
+            <th>                Back-End Score            </th>
+            <th>                Front-End Score            </th>
+        </tr>
+        @foreach (HRData item in Model.Candidates)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.Linkedin</td>
+                <td>@item.BacEndEndScore</td>
+                <td>@item.FrontEndScore</td>
+            </tr>
+        }
+    </table>
+</section>

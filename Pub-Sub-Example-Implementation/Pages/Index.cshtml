@@ -1,0 +1,207 @@
+﻿@page
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Pub_Sub_Example_Implementation.Arguments;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+        <section id="s1">
+            <div class="text-center">
+                <h1 class="display-4">Welcome to DevForLife basic knowledge!</h1>
+                <h3>Here at DevForLife have many positions available for both Front-end(with Angular) and Backend (.NET).</h3>
+
+                <p>Please fill as many answers as possible!</p>
+                <p>All sections are subbmited at once from the submit button at the end!</p>
+            </div>
+            <form method="post">
+                <section id="formPersonalData" class="container shadowed-container">
+                    <h2 class="text-center"><u>Your full name and contact information is required</u></h2>
+                    <div class="d-flex justify-content-around padding-20">
+                        <div>
+                            <label>Email Address</label>
+                            <input title="Email Address" type="email" name="emailaddress" />
+                        </div>
+                        <div>
+                            <label>Full Name</label>
+                            <input type="text" name="fullname" />
+                        </div>
+                        <div>
+                            <label>Linkedin Profile (optional)</label>
+                            <input type="url" name="linkedin" />
+                        </div>
+
+                    </div>
+
+                </section>
+                <section id="feSection" class="container shadowed-container">
+                    <h2 class="text-center"><u>Front-End section</u></h2>
+                    <div id="Q1" class="padding-20">
+                        <h3>Q1: What is the meaning of HTTP?</h3>
+                        <input id="http1" name="http" title="Halted Transfer Text Pattern" value="Halted Transfer Text Pattern" type="radio" />
+                        <label style="margin-right: 20px" for="http1">Halted Transfer Text Pattern</label>
+
+                        <input id="http2" name="http" title="Hypertext Transfer Protocol" value="Hypertext Transfer Protocol" type="radio" />
+                        <label style="margin-right: 20px" for="http2">Hypertext Transfer Protocol</label>
+
+                        <input id="http3" name="http" title="Hyper Text Transfer Pattern" value="Hyper Text Transfer Pattern" type="radio" />
+                        <label style="margin-right: 20px" for="http3">Hyper Text Transfer Pattern</label>
+
+                        <input id="http4" name="http" title="Heated Transfer Protocol" value="Heated Transfer Protocol" type="radio" />
+                        <label style="margin-right: 20px" for="http4">Hyper Text Transfer Pattern</label>
+                    </div>
+                    <hr />
+                    <div id="Q2" class="padding-20">
+                        <h3>Q2: What HTML Tag is not related to the others?</h3>
+
+                        <input id="table" name="table1" title="table" value="Table" type="checkbox" />
+                        <label style="margin-right: 20px" for="table">table</label>
+
+                        <input id="th" name="table2" title="th" value="th" type="checkbox" />
+                        <label style="margin-right: 20px" for="th">th</label>
+
+                        <input id="h1" name="table3" title="h1" value="h1" type="checkbox" />
+                        <label style="margin-right: 20px" for="h1">h1</label>
+
+                        <input id="tr" name="table4" title="tr" value="tr" type="checkbox" />
+                        <label style="margin-right: 20px" for="tr">tr</label>
+                    </div>
+                    <hr />
+                    <div id="Q3" class="padding-20">
+                        <h3>Q3: In what section of a HTML file we import styles and scripts?</h3>
+                        <input type="text" name="htmlFileSection" title="Section of File" placeholder="Q3 Answer here!" />
+
+                    </div>
+                    <div id="Q4" class="padding-20">
+                        <h3>Q4: How many Angular Components are in the follwwing code snippet?</h3>
+                        <pre><code>
+                                &lt;app-root&gt;
+                                    &lt;app-child&gt;
+                                        &lt;table&gt;
+                                            &lt;tr&gt;
+                                                &lt;t-row&gt;&lt;/t-row&gt;
+                                            &lt;/tr&gt;
+                                        &lt;/table&gt;
+                                    &lt;/app-child&gt;
+                                &lt;/app-root&gt;
+                            </code></pre>
+                        <input type="number" name="angularComponents" title="Components" placeholder="-1" />
+                    </div>
+                </section>
+                <section id="beSection" class="container shadowed-container">
+                    <h2 class="text-center"><u>Back-End section</u></h2>
+                    <div id="Q1" class="padding-20">
+                        <h3>Q1: C# is a strong typed proggraming language?</h3>
+                        <input id="csharp1" name="cSharp" title="true" value="true" type="radio" />
+                        <label style="margin-right: 20px" for="csharp1">True</label>
+
+                        <input id="csharp2" name="cSharp" title="false" value="false" type="radio" />
+                        <label style="margin-right: 20px" for="csharp2">False</label>
+                    </div>
+                    <div id="Q2" class="padding-20">
+                        <h3>Q2: Which of these technologies is supported on multiple platforms?</h3>
+                        <input id=".NET1" name=".NET1" title="Standard" value="Standard" type="checkbox" />
+                        <label style="margin-right: 20px" for="NET1">.NET Standard</label>
+
+                        <input id=".NET2" name=".NET2" title="Framework" value="Framework" type="checkbox" />
+                        <label style="margin-right: 20px" for=".NET2">.NET Framework</label>
+
+                        <input id=".NET3" name=".NET3" title="Core" value="Core" type="checkbox" />
+                        <label style="margin-right: 20px" for=".NET3">.NET Core</label>
+                    </div>
+                    <div id="Q3" class="padding-20">
+                        <h3>Q3: What pair of keywards we use when we want to run something asynchronously ?</h3>
+                        <input type="text" name="asynchronously" title="answer" placeholder="Q3 Answer here!" />
+                    </div>
+                    <div id="Q4" class="padding-20">
+                        <h3>Q4: How many times is the NotImplementedExceptionThrown ?</h3>
+                        <img style="width: 800px; height:400px" src="/img/q4.jpg" />
+                        <input type="number" name="throw" title="Exception" placeholder="0" />
+                    </div>
+                </section>
+                <input type="submit" />
+            </form>
+        </section>
+        <section class="containder shadowed-container">
+    <h1 class="text-center">Candidates that applied</h1>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>                Full Name            </th>
+            <th>                Linkedin           </th>
+            <th>                Back-End Score            </th>
+            <th>                Front-End Score            </th>
+        </tr>
+        @foreach (HRData item in Model.Candidates)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.Linkedin</td>
+                <td>@item.BacEndEndScore</td>
+                <td>@item.FrontEndScore</td>
+            </tr>
+        }
+    </table>
+        </section>
+        <section class="containder shadowed-container">
+       <h1 class="text-center">Candidates that Sucseeded at Back End Questions</h1>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>                Full Name            </th>
+            <th>                Linkedin           </th>
+            <th>                Score            </th>
+            <th>                Q1 Answer            </th>
+            <th>                Q2 Answer            </th>
+            <th>                Q3 Answer            </th>
+            <th>                Q4 Answer            </th>
+        </tr>
+        @foreach (BackEndAnswers item in Model.BeCandidates)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Linkedin</td>
+            <td>@item.Score</td>
+            <td>
+                Q1 - @item.Answers[0].Item1
+            </td>
+            <td >
+                    Q2 - @item.Answers[1].Item1
+
+            </td>
+                <td >
+                Q3 - @item.Answers[2].Item1
+
+                </td>
+                <td >
+                    Q4 - @item.Answers[3].Item1
+            </td>
+            </tr>
+        }
+    </table>
+        </section>
+        <section class="containder shadowed-container">
+        <h1 class="text-center">Candidates that Sucseeded at Front End Questions</h1>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>                Full Name            </th>
+            <th>                Linkedin           </th>
+            <th>                Score            </th>
+            <th>                Q1 Answer            </th>
+            <th>                Q2 Answer            </th>
+            <th>                Q3 Answer            </th>
+            <th>                Q4 Answer            </th>
+        </tr>
+        @foreach (FrontEndAnswers item in Model.FeCandidates)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Linkedin</td>
+                <td>@item.Score</td>
+            </tr>
+        }
+    </table>
+    </section>
+   
